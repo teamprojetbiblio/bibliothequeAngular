@@ -1,0 +1,65 @@
+.modal-header{
+    background: #d2cfcf;
+}
+
+img{
+    width: 20%;
+}
+
+h1{
+    font-family: 'Ink Free Regular';
+    color:white;  
+    font-size:80px;
+    padding-top: 5px;
+}
+header {
+ color: #323232;
+background: #d2cfcf;
+position: fixed;
+ top: 0;
+     z-index: 100;
+}
+.main-nav a {
+    font-size: .9em; 
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #444135;
+   display: inline-block;
+   margin: 24px 12px;
+}
+.login{
+    vertical-align: middle;
+    padding: 5px 8px;
+    display: inline-block;
+    background: rgba(153, 153, 153, 0.21);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 12px;
+}
+.smallerLogo {
+    width: 15%;
+    height: 15%;
+    transition-property: width;
+    transition-duration: 0.5s;
+}
+.biggerLogo {
+    width: 20%;
+    height: 20%;
+    transition-property: width;
+    transition-duration: 0.5s;
+}
+.smallerLogoTitle{
+    font-size: 50px;
+    transition-property: font-size;
+    transition-duration: 0.5s;
+}
+.biggerLogoTitle{
+    font-size: 80px;
+    transition-property: font-size;
+    transition-duration: 0.5s;
+}

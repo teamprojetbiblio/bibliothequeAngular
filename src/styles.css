@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+font-family: 'Ink Free Regular';
+font-style: normal;
+font-weight: normal;
+src: local('Ink Free Regular'), url('assets/font/Inkfree.woff') format('woff');
+}
+* {
+  box-sizing: border-box;
+}
+.cursor{
+  cursor: pointer;
+}

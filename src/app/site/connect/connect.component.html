@@ -1,0 +1,80 @@
+<!-- Modal connexion-->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Connexion</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mr-5 ml-5">
+                <form action="">
+                    <div class="form-group">
+                        <label for="login">Login : </label>
+                        <input type="text" class="form-control" name="login">
+                    </div>
+                    <div class="form-group">
+                        <label for="mdp">Mot de passe : </label>
+                        <input type="text" class="form-control" name="mdp">
+                    </div>
+                    <button type="submit" class="d-block mr-auto ml-auto">Valider</button>
+                </form>
+
+            </div>
+            <div class="modal-footer justify-content-center">
+                <a data-toggle="modal" data-target="#subscribeModal" class="text-center cursor">S'inscrire</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal inscription-->
+<div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Inscription</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mr-5 ml-5">
+                <form action="">
+                    <div class="form-group">
+                        <label >Nom : </label>
+                        <input type="text" class="form-control" name="nom" [(ngModel)]="adherent.nom">
+                    </div>
+                    <div class="form-group">
+                        <label >Prénom : </label>
+                        <input type="text" class="form-control" name="prenom" [(ngModel)]="adherent.prenom" >
+                    </div>
+                    <div class="form-group">
+                        <label >Password : </label>
+                        <input type="text" class="form-control" name="psw" [(ngModel)]="adherent.psw">
+                    </div>
+                    <div class="form-group">
+                        <label >Email : </label>
+                        <input type="text" class="form-control" name="email"  [(ngModel)]="adherent.email">
+                    </div>
+                    <div class="form-group">
+                        <label >Adresse : </label>
+                        <input type="text" class="form-control" name="adresse" [(ngModel)]="adherent.adresse" >
+                    </div>
+                    <div class="form-group">
+                        <label >Ville : </label>
+                        <input type="text" class="form-control" name="ville" [(ngModel)]="adherent.ville">
+                    </div>
+                    <div class="form-group">
+                        <label >Téléphone : </label>
+                        <input type="number" class="form-control" name="tel" [(ngModel)]="adherent.tel">
+                    </div>
+                    <!-- <button routerLink="/adherents"  class="d-block mr-auto ml-auto" click="onSaveAdherent()" >Valider</button> -->
+                 <button type="button" class="d-block mr-auto ml-auto" click="onSaveAdherent()" >Valider</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

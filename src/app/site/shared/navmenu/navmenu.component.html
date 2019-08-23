@@ -1,0 +1,108 @@
+<header class=" d-flex justify-content-around container-fluid" >
+    
+<nav class="main-nav d-flex  align-items-center">
+    <div class="d-flex ">
+        <img src="assets/img/logo-livre.png" alt="logo" class="mr-1" id="logo">
+        <h1 id="logoTitle"> a Biblio</h1>
+    </div>
+    <div>
+        <a [routerLink]="['/']">Accueil</a>
+        <a [routerLink]="['/catalogue']">Catalogue</a>
+        <a [routerLink]="['/contact']">Contact</a>
+    </div>
+    <div>
+        <!-- <a [routerLink]="['/connect']" data-toggle="modal" data-target="#loginModal"> -->
+<!--       
+            <img src="assets/img/menu-user.svg" alt="">
+            <span class="login"> Connexion</span></a> -->
+             <a data-toggle="modal" data-target="#subscribeModal" class="text-center cursor">S'inscrire</a>
+    </div>
+
+</nav>
+</header>
+
+<!-- Modal connexion
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Connexion</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mr-5 ml-5">
+                <form action="">
+                    <div class="form-group">
+                        <label for="login">Login : </label>
+                        <input type="text" class="form-control" name="login">
+                    </div>
+                    <div class="form-group">
+                        <label for="mdp">Mot de passe : </label>
+                        <input type="text" class="form-control" name="mdp">
+                    </div>
+                    <button type="submit" class="d-block mr-auto ml-auto">Valider</button>
+                </form>
+
+            </div>
+            <div class="modal-footer justify-content-center">
+                <a data-toggle="modal" data-target="#subscribeModal" class="text-center cursor">S'inscrire</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<!-- Modal inscription-->
+<div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Inscription</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mr-5 ml-5">
+                <!-- <form action=""> -->
+                    <div class="form-group">
+                        <label for="nom">Nom : </label>
+                        <input type="text" class="form-control"  [(ngModel)]="adherent.nom">
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prénom : </label>
+                        <input type="text" class="form-control" [(ngModel)]="adherent.prenom" >
+                    </div>
+                    <div class="form-group">
+                        <label for="psw">Password : </label>
+                        <input type="text" class="form-control" [(ngModel)]="adherent.psw">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email : </label>
+                        <input type="text" class="form-control"  [(ngModel)]="adherent.email">
+                    </div>
+                    <div class="form-group">
+                        <label for="adresse">Adresse : </label>
+                        <input type="text" class="form-control" [(ngModel)]="adherent.adresse" >
+                    </div>
+                    <div class="form-group">
+                        <label for="ville">Ville : </label>
+                        <input type="text" class="form-control"  [(ngModel)]="adherent.ville">
+                    </div>
+                    <div class="form-group">
+                        <label for="tel">Téléphone : </label>
+                        <input type="number" class="form-control"  [(ngModel)]="adherent.tel">
+                    </div>
+                    <!-- <button routerLink="/adherents"  class="d-block mr-auto ml-auto" click="onSaveAdherent()" >Valider</button> -->
+                 <button type="button" class="d-block mr-auto ml-auto" click="onSaveAdherent()" >Valider</button>
+                <!-- </form> -->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

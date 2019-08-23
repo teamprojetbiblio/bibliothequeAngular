@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Adherent } from 'src/model/model.adherent';
 import { AdherentService } from 'src/services/adherents.service';
+import { Router } from '@angular/router';
 
 declare var $: any;
 
@@ -13,18 +14,15 @@ export class NavmenuComponent implements OnInit {
   adherent: Adherent = new Adherent();
   idAdherent: number;
 
-  constructor(public adherentService: AdherentService) { }
+  constructor(public adherentService: AdherentService,private router : Router) { }
 
   ngOnInit() {
-    // var mn = $(".main-nav");
     let smLogo = "smallerLogo";
     let bgLogo = "biggerLogo";
     let smLogoTitle="smallerLogoTitle";
     let bgLogoTitle="biggerLogoTitle";
-    // let header=$("header");
     let logo=$("#logo");
     let logoTitle=$("#logoTitle");
-
 
     $(window).scroll(function () {
       if ($(this).scrollTop() > 100) {
@@ -32,7 +30,6 @@ export class NavmenuComponent implements OnInit {
          logo.removeClass(bgLogo);
          logoTitle.addClass(smLogoTitle);
          logoTitle.removeClass(bgLogoTitle);
-       
       }
       else {
          logo.removeClass(smLogo);
@@ -41,12 +38,20 @@ export class NavmenuComponent implements OnInit {
          logoTitle.addClass(bgLogoTitle);
       }
     });
- 
   }
+
+//subscribe new adherent  
  onSaveAdherent() {
     this.adherentService.saveAdherent(this.adherent).subscribe(data => {
       console.log(data)
     })
-
   }
+
+  //log adherent
+loginAdherent(){
+   this.adherentService.getAdhrentByEmailAndPsw(this.adherent.email,this.adherent.password).subscribe((data:any)=>{
+     this.adherent=data;
+     console.log(this.adherent)
+   })
+}
 }

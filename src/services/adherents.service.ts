@@ -17,8 +17,11 @@ export class AdherentService {
   getAdherent(id: number) {
     return this.http.get("http://localhost:8080/adherents/" + id)
   }
+   getAdhrentByEmailAndPsw(email:string,password:string) {
+    return this.http.get("http://localhost:8080/chercherAdherent?email="+email+"&psw="+password)
+  }
   updateAdherent(adherent:Adherent) {
-    return this.http.put("http://localhost:8080/adherents/" + adherent.id,adherent)
+    return this.http.put("http://localhost:8080/adherents/" + adherent.id_adh,adherent)
   }
   deleteAdherent(id:number){
     return this.http.delete("http://localhost:8080/adherents/" + id)

@@ -1,9 +1,9 @@
 export class Adherent {
-    id: number;
+    id_adh: number;
     nom: string="";
     prenom: string="";
     email: string="";
-    psw: string="";
+    password: string="";
     adresse: string="";
     telephone:number=0;
     ville: string="";

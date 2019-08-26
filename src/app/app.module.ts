@@ -9,7 +9,8 @@ import { AdherentService } from 'src/services/adherents.service';
 import {HomeModule} from './site/home/home.module';
 import {CatalogueModule} from './site/catalogue/catalogue.module';
 import {ErrorModule} from './site/error/error.module';
-import { HomeComponent } from './site/home/home.component';
+import { ProfileModule } from './site/profile/profile.module';
+import { LivreService } from 'src/services/livres.service';
 
 
 // const appRoutes:Routes=[  
@@ -26,10 +27,13 @@ import { HomeComponent } from './site/home/home.component';
     SharedModule,
     HomeModule,
     CatalogueModule,
-    ErrorModule,
-    HttpClientModule
+    ProfileModule,
+    HttpClientModule,
+    ErrorModule
+    
+    
   ],
-  providers: [AdherentService],
+  providers: [AdherentService,LivreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

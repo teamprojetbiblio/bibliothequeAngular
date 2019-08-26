@@ -1,8 +1,12 @@
 .carousel-inner{
     height: 250px;
 }
-img{
-    width: 100%;
+.imgBook{
+    height: 200px;
+}
+.card-img-top{
+     height: 100%;
+     width: auto;
 }
 .scrollToTop {
     width: 40px;
@@ -22,4 +26,14 @@ img{
     -o-transition: .2s ease;
     transition: .2s ease;
 	cursor:pointer;
+}
+.modal-dialog {
+    max-width: 60vw;
+}
+.card-img-modal {
+    max-width: 70vw;
+}
+.modal-header {
+    padding: 0 1rem;
+    background: #d2cfcf;
 }

@@ -41,24 +41,78 @@
                 <option value="6">Théatre</option>
                 <option value="7">Science fiction</option>
             </select>
-            
+
             <div class="input-group-append">
                 <button class="btn btn-outline-secondary" type="button">Button</button>
             </div>
         </div>
         <div class="input-group col-md-6">
-            <input type="text">
+            <input type="text" name="motCle" [(ngModel)]="motCle">
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
+                <button class="btn btn-outline-secondary" (click)="doSearch()" type="button"><i
+                        class="fas fa-search"></i></button>
             </div>
         </div>
     </div>
-    <div class="card" style="width: 18rem;">
-        <img src="assets/img/book.png" class="card-img-top" alt="...">
-        <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
+    <div class="d-flex flex-wrap">
+        <div *ngFor="let l of pageLivres?.content" class="card m-3" style="width: 15rem;">
+            <h6 class="card-title text-center bg-light p-3">{{l.titre}}</h6>
+            <div class="imgBook text-center pb-2">
+                <a href="#" data-toggle="modal" data-target="#bookModal"><img src="{{l.imgLivre}}" class="card-img-top"
+                        alt="Image livre"></a>
+
+            </div>
+            <!-- <div class="card-body border-top">
+            <p class="card-text">{{l.description}}</p>
+        </div> -->
+            <!-- Modal -->
+            <div class="modal fade" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true" class="text-secondary">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row d-flex">
+                                <div class="col-md-5 text-center">
+                                    <img src="{{l.imgLivre}}" class="card-img-modal" alt="Image livre">
+                                </div>
+                                <div class="col-md-7 pr-5">
+                                    <h4 class="modal-title text-left m-2" id="exampleModalLabel">{{l.titre}}</h4>
+                                    <hr>
+                                    <div class="m-3">
+                                         <p class="text-right">Auteur : <span class="font-weight-bold">{{l.auteur}}</span>
+                                    </p>
+                                    <p>{{l.description}}</p>
+                                    <p class="text-right">Editeur : <span class="font-weight-bold">{{l.editeur}}</span>
+                                    </p>
+                                    </div>
+                                    <hr>
+                                    <div class="row d-flex justify-content-around mt-4">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Fermer</button>
+                                        <button type="button" class="btn btn-secondary">Emprunter</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="modal-footer"> -->
+
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
+    <div class="container">
+        <ul class="pagination">
+            <li class="page-item" [ngClass]="{'active':i==currentPage}" *ngFor="let p of pages; let i = index">
+                <a class="page-link clickable" (click)="goToPage(i)">{{i}}</a>
+            </li>
+        </ul>
+    </div>
 </div>

@@ -13,6 +13,7 @@ declare var $: any;
 export class NavmenuComponent implements OnInit {
   adherent: Adherent = new Adherent();
   idAdherent: number;
+  session:[];
 
   constructor(public adherentService: AdherentService,private router : Router) { }
 
@@ -23,6 +24,7 @@ export class NavmenuComponent implements OnInit {
     let bgLogoTitle="biggerLogoTitle";
     let logo=$("#logo");
     let logoTitle=$("#logoTitle");
+    let loginModal=$('#loginModal');
 
     $(window).scroll(function () {
       if ($(this).scrollTop() > 100) {
@@ -52,6 +54,8 @@ loginAdherent(){
    this.adherentService.getAdhrentByEmailAndPsw(this.adherent.email,this.adherent.password).subscribe((data:any)=>{
      this.adherent=data;
      console.log(this.adherent)
+   
    })
 }
+
 }

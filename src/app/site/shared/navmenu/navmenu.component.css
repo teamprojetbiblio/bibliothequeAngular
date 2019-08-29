@@ -5,7 +5,25 @@
 img{
     width: 20%;
 }
-
+.menu{
+    width: 50%;
+}
+a{
+      padding:20px 0!important;
+    margin:0 20px!important;
+}
+.linkNav{
+     transition: 0.3s ease;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+    padding:20px 0!important;
+    margin:0 20px!important;
+}
+.linkNav:hover {
+  border-top: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  padding: 6px 0!important; 
+}
 h1{
     font-family: 'Ink Free Regular';
     color:white;  
@@ -40,6 +58,8 @@ position: fixed;
     text-transform: capitalize;
     font-weight: 400;
     font-size: 12px;
+    width: 105px;
+    text-align: center;
 }
 .smallerLogo {
     width: 15%;

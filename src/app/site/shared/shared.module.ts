@@ -6,8 +6,6 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { AdherentService } from 'src/services/adherents.service';
 
-
-
 @NgModule({
   declarations: [NavmenuComponent, FooterComponent],
   imports: [

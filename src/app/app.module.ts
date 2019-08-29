@@ -12,10 +12,8 @@ import {ErrorModule} from './site/error/error.module';
 import { ProfileModule } from './site/profile/profile.module';
 import { LivreService } from 'src/services/livres.service';
 
-
 // const appRoutes:Routes=[  
 // ]
-
 
 @NgModule({
   declarations: [
@@ -30,8 +28,6 @@ import { LivreService } from 'src/services/livres.service';
     ProfileModule,
     HttpClientModule,
     ErrorModule
-    
-    
   ],
   providers: [AdherentService,LivreService],
   bootstrap: [AppComponent]

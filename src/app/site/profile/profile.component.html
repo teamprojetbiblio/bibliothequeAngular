@@ -1,4 +1,5 @@
 <div class="container">
+    <p *ngIf="adherent">Bienvenue {{adherent.nom}}</p>
     <h2 class="text-center">Mon compte</h2>
     <div class="alerte"></div>
     <div class="row">
@@ -14,13 +15,13 @@
                         </div>
                         <div class="form-group  col-md-6">
                             <label for="prenom">Prénom : </label>
-                            <input class="form-control" type="text" name="prenom">
+                            <input class="form-control" type="text" name="prenom" >
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="email">Email : </label>
-                            <input class="form-control" type="email" name="email">
+                            <input class="form-control" type="email" name="email" >
                         </div>
                         <div class="form-group col-md-6">
                             <label for="password">Password : </label>

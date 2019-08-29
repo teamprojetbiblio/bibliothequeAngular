@@ -1,29 +1,39 @@
-<header class=" d-flex justify-content-around container-fluid" >
-    
-<nav class="main-nav d-flex  align-items-center">
-    <div class="d-flex ">
-        <img src="assets/img/logo-livre.png" alt="logo" class="mr-1" id="logo">
-        <h1 id="logoTitle"> a Biblio</h1>
-    </div>
-    <div>
-        <a [routerLink]="['/']">Accueil</a>
-        <a [routerLink]="['/catalogue']">Catalogue</a>
-        <a [routerLink]="['/contact']">Contact</a>
-    </div>
-    <div>
-        <!-- <a [routerLink]="['/connect']" data-toggle="modal" data-target="#loginModal"> -->
-        <a data-toggle="modal" data-target="#loginModal">
-            <img src="assets/img/menu-user.svg" alt="">
-            <span class="login"> Connexion</span></a>
-             <!-- <a data-toggle="modal" data-target="#subscribeModal" class="text-center cursor">S'inscrire</a> -->
-    </div>
+<header class=" d-flex container-fluid">
 
-</nav>
+    <nav class="main-nav d-flex container align-items-center">
+        <div class="d-flex">
+            <img src="assets/img/logo-livre.png" alt="logo" class="mr-1" id="logo">
+            <h1 id="logoTitle"> a Biblio</h1>
+        </div>
+        <div class="menu d-flex justify-content-between">
+            <div>
+                <a class="linkNav" [routerLink]="['/']">Accueil</a>
+                <a class="linkNav" [routerLink]="['/catalogue']">Catalogue</a>
+                <a class="linkNav" [routerLink]="['/contact']">Contact</a>
+            </div>
+
+            <div *ngIf="idAdherent!=null;else notName" class="d-flex align-items-center">
+                <img src="assets/img/menu-user.svg" alt="" (click)="memberAccount()">
+
+                <a><span class="login" (click)="logoutAdherent(idAdherent)">Déconnexion <i class="fas fa-sign-out-alt"></i></span></a>
+            </div>
+            <ng-template #notName>
+                <div>
+                    <!-- <a [routerLink]="['/connect']" data-toggle="modal" data-target="#loginModal"> -->
+                    <a data-toggle="modal" data-target="#loginModal">
+                        <span class="login"> Connexion <i class="fas fa-sign-in-alt"></i></span></a>
+                    <!-- <a data-toggle="modal" data-target="#subscribeModal" class="text-center cursor">S'inscrire</a> -->
+                </div>
+            </ng-template>
+        </div>
+
+
+    </nav>
+
 </header>
 
 <!-- Modal connexion -->
-<div class="modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div class="modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -33,7 +43,7 @@
                 </button>
             </div>
             <div class="modal-body mr-5 ml-5">
-                <form >
+                <form>
                     <div class="form-group">
                         <label for="email">Login : </label>
                         <input type="email" class="form-control" name="email" [(ngModel)]="adherent.email">
@@ -42,14 +52,14 @@
                         <label for="pwd">Mot de passe : </label>
                         <input type="password" class="form-control" name="password" [(ngModel)]="adherent.password">
                     </div>
-                    <button type="button" (click)="loginAdherent()" routerLink="/profil" class="d-block mr-auto ml-auto" >Valider</button>
+                    <button type="button" (click)="loginAdherent()" class="d-block mr-auto ml-auto">Valider</button>
                 </form>
 
             </div>
             <div class="modal-footer justify-content-center">
-                <a data-toggle="modal"  data-target="#subscribeModal" class="text-center cursor">S'inscrire</a>
+                <a data-toggle="modal" data-target="#subscribeModal" class="text-center cursor">S'inscrire</a>
             </div>
-        </div> 
+        </div>
     </div>
 </div>
 
@@ -66,18 +76,18 @@
                 </button>
             </div>
             <div class="modal-body mr-5 ml-5">
-               <form #subcribeForm=ngForm (ngSubmit)=onSaveAdherent()>
+                <form #subcribeForm=ngForm (ngSubmit)=onSaveAdherent()>
                     <div class="form-group">
                         <label for="nom">Nom : </label>
                         <input type="text" class="form-control" name="nom" [(ngModel)]="adherent.nom">
                     </div>
                     <div class="form-group">
                         <label for="prenom">Prénom : </label>
-                        <input type="text" class="form-control" name="prenom" [(ngModel)]="adherent.prenom" >
+                        <input type="text" class="form-control" name="prenom" [(ngModel)]="adherent.prenom">
                     </div>
                     <div class="form-group">
                         <label for="psw">Password : </label>
-                        <input type="password" class="form-control" name ="password" [(ngModel)]="adherent.password">
+                        <input type="password" class="form-control" name="password" [(ngModel)]="adherent.password">
                     </div>
                     <div class="form-group">
                         <label for="email">Email : </label>
@@ -85,7 +95,7 @@
                     </div>
                     <div class="form-group">
                         <label for="adresse">Adresse : </label>
-                        <input type="text" class="form-control" name="adresse" [(ngModel)]="adherent.adresse" >
+                        <input type="text" class="form-control" name="adresse" [(ngModel)]="adherent.adresse">
                     </div>
                     <div class="form-group">
                         <label for="ville">Ville : </label>
@@ -95,14 +105,11 @@
                         <label for="tel">Téléphone : </label>
                         <input type="number" class="form-control" name=tel [(ngModel)]="adherent.tel">
                     </div>
-                    
-                 <button  [disabled]=!subcribeForm.valid class="d-block mr-auto ml-auto" >Valider</button>
+
+                    <button [disabled]=!subcribeForm.valid class="d-block mr-auto ml-auto">Valider</button>
                 </form>
 
             </div>
         </div>
     </div>
-</div> 
-
-
-
+</div>

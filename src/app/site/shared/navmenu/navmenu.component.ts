@@ -51,7 +51,18 @@ export class NavmenuComponent implements OnInit {
   }
 
   //log adherent
-  loginAdherent() {
+loginAdherent()
+{
+  this.adherentService.getAdherentByEmail(this.adherent.email, this.adherent).subscribe((data: any) => {
+    this.adherent = data;
+    console.log(this.adherent);
+    this.idAdherent = this.adherent.id_adh;
+    $("#loginModal").modal('hide');
+    this.router.navigate(['profil', this.idAdherent]);
+  })
+}
+
+  /*loginAdherent() {
     this.adherentService.getAdhrentByEmailAndPsw(this.adherent.email, this.adherent.password).subscribe((data: any) => {
       this.adherent = data;
       console.log(this.adherent);
@@ -59,7 +70,7 @@ export class NavmenuComponent implements OnInit {
       $("#loginModal").modal('hide');
       this.router.navigate(['profil', this.idAdherent]);
     })
-  }
+  }*/
 
   logoutAdherent(id: number) {
     // this.adherent = new Adherent();

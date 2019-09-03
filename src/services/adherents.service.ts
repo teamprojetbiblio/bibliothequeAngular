@@ -26,4 +26,12 @@ export class AdherentService {
   deleteAdherent(id:number){
     return this.http.delete("http://localhost:8080/adherents/" + id)
   }
+
+  //connexion :
+getAdherentByEmail(email:string, adherent:Adherent)
+{
+  return this.http.get("http://localhost:8080/chercherAdherentLog?email="+email);
+}
+
+
 }
